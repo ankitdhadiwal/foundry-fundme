@@ -2,11 +2,12 @@
 pragma solidity ^0.8.19;
 
 
-import {Vm} from "forge-std/Vm.sol";
+import "forge-std/Vm.sol";
 import {Script} from "forge-std/Script.sol";
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
 
 contract HelperConfig {
+    Vm vm = Vm(address(0));
     NetworkConfig public activeNetworkConfig;
 
     uint8 public constant DECIMALS = 8;
