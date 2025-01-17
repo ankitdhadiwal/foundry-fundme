@@ -3,12 +3,16 @@ pragma solidity ^0.8.19;
 
 
 import "forge-std/Vm.sol";
-import {Script} from "forge-std/Script.sol";
+import {Script, console2} from "forge-std/Script.sol";
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
+
+
 
 contract HelperConfig {
     Vm vm = Vm(address(0));
     NetworkConfig public activeNetworkConfig;
+
+    error HelperConfig__InvalidChainId();
 
     uint8 public constant DECIMALS = 8;
     int256 public constant INITIAL_PRICE = 2000e8;
